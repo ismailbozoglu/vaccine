@@ -1,0 +1,15 @@
+import pandas as pd
+
+vaccine = pd.read_csv("country_vaccination_stats.csv")
+print(vaccine)
+
+vaccine = vaccine.fillna(0)
+
+vaccine_group = vaccine.groupby(['country']).median()
+vaccine_group = vaccine_group.sort_values('daily_vaccinations', ascending= False)
+print(vaccine_group.head(3))
+
+vaccine_dated = vaccine[vaccine['date'] == "1/6/2021"]
+print(vaccine_dated.head(10))
+
+print(vaccine_dated.daily_vaccinations.sum())
