@@ -1,5 +1,5 @@
 stat_access_link = "<url>https://xcd32112.smart_meter.com</url>"
 
-print(stat_access_link.split(">")[1].split("<")[0])
+print(stat_access_link.split("//")[1].split("<")[0])
 
 ### Same process can be applied to all column
